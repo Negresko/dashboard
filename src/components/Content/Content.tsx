@@ -1,10 +1,14 @@
 import React from 'react';
 import { ContainerContent } from './ContentCSS';
 
-const Content: React.FC = () => {
+export interface ChildrenProps {
+  children: React.ReactNode;
+}
+
+const Content: React.FC<ChildrenProps> = ({children}) => {
   return (
     <ContainerContent>
-      Content
+      { children }
     </ContainerContent>
   );
 }

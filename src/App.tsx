@@ -8,11 +8,15 @@ import { ThemeProvider } from 'styled-components';
 
 import dark from './styles/themes/dark';
 
+import Dashboard from './pages/Dashboard/Dashboard';
+
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyles />
-      <Layout />
+      <Layout>
+        <Dashboard/>
+      </Layout>
     </ThemeProvider>
   );
 }
