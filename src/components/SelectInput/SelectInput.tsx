@@ -1,9 +1,5 @@
-import React, {SelectHTMLAttributes} from 'react'
+import React, { SelectHTMLAttributes } from 'react'
 import { ContainerSelectInput } from './SelectInputCSS';
-
-interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>{
-
-}
 
 interface ISelectInputProps {
     options: {
@@ -12,15 +8,15 @@ interface ISelectInputProps {
     }[],
 }
 
-const SelectInput: React.FC<ISelectInputProps> = ({options}) => {
+const SelectInput: React.FC<ISelectInputProps> = ({ options }) => {
 
 
     return (
         <ContainerSelectInput>
-            <select>
+            <select {...options}>
                 {
                     options.map(option => (
-                        <option value={option.value}>{option.label}</option>
+                        <option key={option.value} value={option.value}>{option.label}</option>
                     ))
                 }
             </select>

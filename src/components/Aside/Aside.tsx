@@ -1,5 +1,8 @@
 import React from 'react';
-import { ContainerAside, Header, LogoImg, MenuContainer, MenuItemLink, Title } from './AsideCSS';
+
+import {Link} from 'react-router-dom';
+
+import { ContainerAside, Header, LogoImg, MenuContainer, Title } from './AsideCSS';
 
 import {MdDashboard, MdArrowDownward, MdArrowUpward, MdExitToApp} from 'react-icons/md';
 
@@ -14,22 +17,22 @@ const Aside: React.FC = () => {
       </Header>
 
       <MenuContainer>
-        <MenuItemLink href="">
+        <Link to="/dashboard">
           <MdDashboard />
           Dashboard
-        </MenuItemLink>
-        <MenuItemLink href="">
+        </Link>
+        <Link to="/list/entry-balance">
           <MdArrowUpward />
           Entradas
-        </MenuItemLink>
-        <MenuItemLink href="">
+        </Link>
+        <Link to="/list/exit-balance">
           <MdArrowDownward />
           Saidas
-        </MenuItemLink>
-        <MenuItemLink href="">
+        </Link>
+        <Link to="">
           <MdExitToApp />
           Sair
-        </MenuItemLink>
+        </Link>
       </MenuContainer>
     </ContainerAside>
   );
